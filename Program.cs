@@ -1,24 +1,19 @@
-﻿int isFullTime = 1;
-int isPartTime = 0;
-int employeeRatePerHr = 20;
+﻿int employeeRatePerHr = 20;
 int employeeHrs = 0;
 int employeeWagePerDay = 0;
 Random rnd = new Random();
 int num = rnd.Next(0, 3);
-if (num == isFullTime)
+switch (num)
 {
-    employeeHrs = 8;
-    Console.WriteLine("Present");
-}
-else if (num == isPartTime)
-{
-    employeeHrs = 4;
-    Console.WriteLine("Part Time");
-}
-else
-{
-    employeeHrs = 0;
-    Console.WriteLine("Absent");
+    case 0:
+        employeeHrs = 8;
+        break;
+    case 1:
+        employeeHrs = 4;
+        break;
+    default:
+        employeeHrs = 0;
+        break;
 }
 employeeWagePerDay = employeeHrs * employeeRatePerHr;
 Console.WriteLine("employeeWagePerDay : " + employeeWagePerDay);
