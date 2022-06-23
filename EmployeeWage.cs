@@ -8,11 +8,8 @@ namespace EmployeeWages
 {
    public class EmployeeWage
     {
-        public void Wage()
+        public void Wage(string companyName ,int employeeRatePerHr, int maxWorkingDaysInMonth ,int maxWorkingHrsInMonth )
         {
-            int employeeRatePerHr = 20;
-            int maxWorkingDaysInMonth = 20;
-            int maxWorkingHrsInMonth = 100;
             int totalEmployeeHrs = 0;
             int totalWorkingDays = 0;
             int employeeHrs = 0;
@@ -41,9 +38,9 @@ namespace EmployeeWages
                 employeeWagePerDay = employeeHrs * employeeRatePerHr;
                 Console.WriteLine("employeeWagePerDay : " + employeeWagePerDay);
                 employeeWagePerMonth += employeeWagePerDay;
-
             }
-            Console.WriteLine("employeeWagePerMonth : " + employeeWagePerMonth);
+            Console.WriteLine("Company Name : " +companyName);
+            Console.WriteLine("employee Wage Per Month for a company : " + employeeWagePerMonth);
         }
     }
 }
