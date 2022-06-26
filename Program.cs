@@ -1,5 +1,8 @@
 ﻿using EmployeeWages;
-EmployeeWage employee = new EmployeeWage();
-employee.Wage("BridgeLabz",50,20,200);
+EmployeeWage BridgeLabz = new EmployeeWage("BridgeLabz", 50, 20, 200);
+EmployeeWage mittal = new EmployeeWage("mittal", 30, 20, 200);
+BridgeLabz.Wage();
+Console.WriteLine(BridgeLabz.Show());
 Console.WriteLine("---------------------");
-employee.Wage("mittal",30,20,200);
+mittal.Wage();
+Console.WriteLine(mittal.Show());

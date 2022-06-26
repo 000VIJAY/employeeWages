@@ -7,15 +7,27 @@ using System.Threading.Tasks;
 namespace EmployeeWages
 {
    public class EmployeeWage
-    {
-        public void Wage(string companyName ,int employeeRatePerHr, int maxWorkingDaysInMonth ,int maxWorkingHrsInMonth )
+   {
+        string companyName;
+        int employeeRatePerHr;
+        int maxWorkingDaysINMonth;
+        int MaxWorkingHrsInMonth;
+       int employeeWagePerMonth;
+        public EmployeeWage(string companyName, int employeeRatePerHr, int maxWorkingDaysInMonth, int maxWorkingHrsInMonth)
+        {
+            this.companyName = companyName;
+            this.employeeRatePerHr = employeeRatePerHr;
+            this.maxWorkingDaysINMonth = maxWorkingDaysInMonth;
+            this.MaxWorkingHrsInMonth = maxWorkingHrsInMonth;
+        }
+      
+        public void Wage()
         {
             int totalEmployeeHrs = 0;
             int totalWorkingDays = 0;
             int employeeHrs = 0;
             int employeeWagePerDay = 0;
-            int employeeWagePerMonth = 0;
-            while (totalEmployeeHrs <= maxWorkingHrsInMonth && totalWorkingDays < maxWorkingDaysInMonth)
+            while (totalEmployeeHrs <= this.MaxWorkingHrsInMonth && totalWorkingDays < this.maxWorkingDaysINMonth)
             {
                 totalWorkingDays++;
                 Random rnd = new Random();
@@ -35,12 +47,16 @@ namespace EmployeeWages
                 totalEmployeeHrs += employeeHrs;
                 Console.WriteLine("employeeHours : " + totalEmployeeHrs);
                 Console.WriteLine("Day : " + totalWorkingDays);
-                employeeWagePerDay = employeeHrs * employeeRatePerHr;
+                employeeWagePerDay = employeeHrs * this.employeeRatePerHr;
                 Console.WriteLine("employeeWagePerDay : " + employeeWagePerDay);
                 employeeWagePerMonth += employeeWagePerDay;
             }
             Console.WriteLine("Company Name : " +companyName);
             Console.WriteLine("employee Wage Per Month for a company : " + employeeWagePerMonth);
         }
-    }
+        public string Show()
+        {
+            return "Name of Company : " +this.companyName + " is : " + this.employeeWagePerMonth;
+        }
+   }
 }
